@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.screen{
+    display:none;
+    text-align:center;
+    background:rgba(255,255,255,0.2);
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
+    max-width:650px;
+    animation:fadeIn 1s ease;
+}
+
+.active{display:block;}
+
+h1{
+    color:#fff;
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+p{
+    color:#fff;
+    font-size:18px;
+    line-height:1.7;
+}
+
+button{
+    padding:12px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    margin:15px;
+    transition:0.3s;
+}
+
+.yes{
+    background:#ff4d6d;
+    color:#fff;
+}
+
+.no{
+    background:#fff;
+    color:#ff4d6d;
+}
+
+button:hover{transform:scale(1.1);}
+
+.heart{
+    position:absolute;
+    color:rgba(255,255,255,0.6);
+    font-size:20px;
+    animation:float 6s infinite ease-in;
+}
+
+@keyframes float{
+    0%{transform:translateY(100vh);opacity:0;}
+    50%{opacity:1;}
+    100%{transform:translateY(-10vh);opacity:0;}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+/* Bear */
+.bear{
+    font-size:120px;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+}
+
+.love-card{
+    background:#fff;
+    color:#ff4d6d;
+    padding:15px 30px;
+    border-radius:15px;
+    font-size:22px;
+    font-weight:bold;
+    display:inline-block;
+    margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating Hearts -->
+<script>
+for(let i=0;i<30;i++){
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDelay=Math.random()*6+"s";
+    heart.style.fontSize=(15+Math.random()*25)+"px";
+    document.body.appendChild(heart);
+}
+</script>
+
+<!-- SCREEN 1 -->
+<div class="screen active" id="screen1">
+    <h1>Do you love me? ❤️</h1>
+    <button class="yes" onclick="nextScreen(2)">Yes</button>
+    <button class="no" onclick="alert('You have to say YES 😌❤️')">
+        You have to say YES
+    </button>
+</div>
+
+<!-- SCREEN 2 -->
+<div class="screen" id="screen2">
+    <h1>From My Heart 💕</h1>
+    <p>
+       I don’t know how to explain everything in one message 
+        but I know one thing clearly 
+        you mean a lot to me  
+        If I ever hurt you 
+        it was never because I didn’t care  
+        My heart chooses you, again and again 
+		i know tum mujh say diappoint ho but jitna tum mery liye matter karty utna koi nhi hai
+		i know mera bht fault hai mein bht gussa karti but mujhye pata hai mera shaheer mujh say 
+		naraz nhi reh sakta or you mean world to me i love you so much 
+		tum meri jaan ho tumhary say batein karna mujhye bht pasand hai 
+		mein chahti hun tum hamesha meray sath raho or hum puri life ik dosray kayy sath guzarein 
+		han obstacles tou aye gay bht but un ko khatam kesay karna hum par depend kartaa hain 
+		mujhye bht acha lagta hai jab tum meri care karty mery liye efforts karty or out of the way jatay 
+		tumhara sath mujhye is dunia ka sab say lucky insaaan banata hai 
+		jab tum meri tareef karty that makes me feel most beautiful girl in your life 
+		you`re perfect for me i love you 
+    </p>
+    <button class="yes" onclick="nextScreen(3)">Click this 💖</button>
+</div>
+
+<!-- SCREEN 3 -->
+<div class="screen" id="screen3">
+    <h1>I’m Really Sorry 💔➡️❤️</h1>
+    <p>
+        I’m sorry for every moment that made you sad , 
+        for every word that felt heavy, 
+        and for every silence that hurt  
+        You are precious to me   
+        and losing your smile would break my heart.  
+        Please forgive me… because my feelings for you are real, deep, and forever.
+		please meri mazrat ko qabool kiya jaye 
+		tum meri jaan ho...... 
+    </p>
+
+    <!-- NEW BUTTON -->
+    <button class="yes" onclick="nextScreen(4)">Qabool hai? 🥺❤️</button>
+</div>
+
+<!-- SCREEN 4 -->
+<div class="screen" id="screen4">
+    <div class="bear">🧸</div>
+    <div class="love-card">I Love You ❤️</div>
+    <h1 style="margin-top:20px;">Forever Yours 💞</h1>
+</div>
+
+<script>
+function nextScreen(num){
+    document.querySelectorAll(".screen")
+    .forEach(s=>s.classList.remove("active"));
+    document.getElementById("screen"+num).classList.add("active");
+}
+</script>
+
+</body>
+</html>
